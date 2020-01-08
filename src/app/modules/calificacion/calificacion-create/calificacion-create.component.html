@@ -1,0 +1,72 @@
+
+
+<style>
+    form p, form input[type = "submit"]{text-align:left; font-size:25px;}
+    
+    input[type = "radio"]{ display:none;/*position: absolute;top: -1000em;*/}
+    label{ color:grey;}
+    
+    .clasificacion{
+        direction: rtl;
+        unicode-bidi: bidi-override;
+    }
+    
+    label:hover,
+    label:hover ~ label{color:orange;}
+    input[type = "radio"]:checked ~ label{color:orange;}
+    </style>
+
+<p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Crear calificacion
+        </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <h2 class="text-center">Crear una nueva calificación</h2>
+                <br>
+                <form name="book" (ngSubmit)="f.form.valid && createcalificacion()" #f="ngForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="tecnicoUser"><b>Puntaje</b></label>
+                        <form>
+                            <p class="clasificacion">
+                              <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                              --><label for="radio1">★</label><!--
+                              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                              --><label for="radio2">★</label><!--
+                              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                              --><label for="radio3">★</label><!--
+                              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                              --><label for="radio4">★</label><!--
+                              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                              --><label for="radio5">★</label>
+                            </p>
+                          </form>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calificacionDes"><b>Descripción</b></label>
+                        <input type="text" name="calificacionDes" class="form-control" id="calificacionDes" [(ngModel)]="calificacion.descripcion" #calificacionUser="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The calificacions's description is missing</div>
+                        </div>
+                    </div>
+
+                   
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                    <div class="divider"></div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

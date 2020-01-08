@@ -1,0 +1,36 @@
+<p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Crear equipoComputo
+        </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <h2 class="text-center">Crear un nuevo equipo de Computo</h2>
+                <br>
+                <form name="book" (ngSubmit)="createequipoComputo()" #f="ngForm" novalidate>
+
+
+                    <div class="form-group">
+                        <label for="equipoComputoUser"><b>Descripción</b></label>
+                        <input type="text" name="equipoComputoDescripcion" class="form-control" id="equipoComputoDescripcion" [(ngModel)]="equipoComputo.descripcion" #equipoComputoDescripcion="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The equipoComputos's description is missing</div>
+                        </div>
+                    </div>
+
+                   
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Crear</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

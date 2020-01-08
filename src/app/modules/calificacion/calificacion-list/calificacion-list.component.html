@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Incidencia</th>
+                        <th scope="col">Puntaje</th>
+                        <th scope="col">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let calificacion of calificacions">
+                        <td>{{calificacion.numeroEst}} </td>
+                        <td>{{calificacion.descripcion}} </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <app-calificacion-create></app-calificacion-create>
+</div>
